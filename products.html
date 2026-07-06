@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CeeSlay Tweaks - Products</title>
+<meta name="description" content="CeeSlay Tweaks product packages powered by RisxnTweaks." />
+<link rel="icon" type="image/png" href="assets/ceeslay-logo.png" />
+<link rel="apple-touch-icon" href="assets/ceeslay-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#080304;
+  --ink:#fdeef0;
+  --muted:#b78f95;
+  --muted-2:#8a666c;
+  --red:#ff2338;
+  --red-bright:#ff4d5e;
+  --ember:#ff6a3d;
+  --crimson:#c8102e;
+  --line:rgba(255,80,100,.14);
+  --glass:rgba(28,10,14,.55);
+  --glass-2:rgba(40,14,18,.35);
+  --maxw:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(44vw 38vw at 8% 5%,rgba(200,16,46,.28),transparent 62%),
+    radial-gradient(48vw 42vw at 92% 10%,rgba(255,35,56,.2),transparent 64%),
+    radial-gradient(54vw 44vw at 50% 100%,rgba(255,106,61,.13),transparent 62%),
+    var(--bg);
+  color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+#star-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:'Sora',sans-serif;letter-spacing:-.02em;line-height:1.04}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;position:relative;z-index:1}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--red-bright);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--red))}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(8,3,4,.72);backdrop-filter:blur(18px);border-color:var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 26px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Sora';font-weight:800;font-size:19px;letter-spacing:-.01em}
+.brand .mark{width:34px;height:34px;border-radius:9px;object-fit:cover;box-shadow:0 0 0 1px var(--line),0 6px 20px rgba(255,35,56,.35)}
+.brand em{color:var(--red-bright);font-style:normal}
+.nav-links{display:flex;gap:30px;align-items:center;color:var(--muted);font-size:14px;font-weight:500}
+.nav-links a{transition:color .2s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--red-bright);transition:width .3s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-size:14px;padding:13px 24px;border-radius:12px;border:1px solid transparent;transition:transform .25s,box-shadow .3s,background .3s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--red) 0%,var(--crimson) 100%);color:#fff;box-shadow:0 8px 30px rgba(255,35,56,.35),inset 0 1px 0 rgba(255,255,255,.2)}
+.btn-primary:hover{box-shadow:0 12px 44px rgba(255,45,64,.55),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn-ghost{background:rgba(255,255,255,.04);color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{background:rgba(255,45,64,.08);border-color:var(--red-bright)}
+.hero{padding:120px 0 36px}
+.hero-top{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:34px}
+.hero h1{font-size:clamp(42px,6vw,78px);font-weight:800;margin:16px 0}
+.hero h1 span{background:linear-gradient(120deg,#fff 0%,var(--red-bright) 48%,var(--ember) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{max-width:640px;color:var(--muted);font-size:18px}
+.trust-strip{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted-2);font-size:13px;margin-top:18px}
+.trust-strip b{color:var(--ink)}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:80px}
+.card{position:relative;padding:28px;border-radius:18px;border:1px solid var(--line);background:var(--glass-2);display:flex;flex-direction:column;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.card:hover{transform:translateY(-8px);border-color:var(--red-bright);box-shadow:0 30px 60px -30px rgba(255,45,64,.5)}
+.card.featured{border-color:rgba(255,77,94,.5);background:linear-gradient(180deg,rgba(255,35,56,.1),rgba(20,6,9,.5))}
+.card .tag{position:absolute;top:18px;right:18px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:20px;background:var(--red);color:#fff;box-shadow:0 6px 18px rgba(255,35,56,.5);z-index:2}
+.card h3{font-size:21px;font-weight:800;margin-bottom:6px}
+.card .price{font-family:'Sora';font-weight:800;font-size:34px;margin:12px 0 4px}
+.card .price small{font-size:14px;color:var(--muted);font-weight:600}
+.card-media{height:280px;margin:-6px -6px 16px;border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 34%,rgba(255,45,64,.18),transparent 68%),#0c0506;border:1px solid var(--line)}
+.card-media img{max-width:64%;max-height:92%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 14px 26px rgba(0,0,0,.55));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover .card-media img{transform:translateY(-4px) scale(1.02)}
+.card ul{list-style:none;margin:18px 0 24px;display:flex;flex-direction:column;gap:11px}
+.card li{display:flex;gap:10px;font-size:14px;color:var(--muted)}
+.card li::before{content:"";flex:none;width:9px;height:5px;border-left:3px solid var(--red-bright);border-bottom:3px solid var(--red-bright);transform:rotate(-45deg);margin-top:7px}
+.card .btn{margin-top:auto;width:100%}
+footer{border-top:1px solid var(--line);padding:36px 0 42px;color:var(--muted-2);font-size:13px}
+footer .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+@media(max-width:920px){.products{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}}
+@media(max-width:620px){.hero{padding-top:62px}.products{grid-template-columns:1fr}.card-media{height:250px}.card-media img{max-width:68%;max-height:92%}.hero-top{align-items:flex-start}.nav-inner{padding:14px 20px}.btn{padding:12px 18px}}
+
+/* ===== FIXED FAQ CHAT ===== */
+.faq-chat{position:fixed;right:24px;bottom:24px;z-index:50;font-family:'Inter',system-ui,sans-serif}
+.faq-chat *{box-sizing:border-box}
+.chat-launch{position:relative;width:66px;height:66px;border:1px solid rgba(255,77,94,.42);border-radius:18px;
+  display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--red),var(--crimson));
+  box-shadow:0 16px 44px rgba(255,35,56,.44),0 0 0 8px rgba(255,35,56,.08),inset 0 1px 0 rgba(255,255,255,.24);
+  cursor:pointer;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s}
+.chat-launch::before,.chat-launch::after{content:"";position:absolute;inset:-9px;border-radius:22px;border:1px solid rgba(255,77,94,.34);animation:chatPulse 2.4s ease-out infinite}
+.chat-launch::after{animation-delay:1.2s}
+.chat-launch:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 20px 56px rgba(255,35,56,.58),0 0 0 10px rgba(255,35,56,.09),inset 0 1px 0 rgba(255,255,255,.3)}
+.chat-launch svg{position:relative;z-index:1;width:29px;height:29px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.35))}
+.chat-dot{position:absolute;top:10px;right:10px;width:11px;height:11px;border-radius:50%;background:#3ee06e;box-shadow:0 0 14px #3ee06e;z-index:2}
+@keyframes chatPulse{0%{transform:scale(.86);opacity:.75}80%,100%{transform:scale(1.3);opacity:0}}
+.chat-panel{position:absolute;right:0;bottom:82px;width:min(392px,calc(100vw - 32px));max-height:min(640px,calc(100vh - 122px));overflow:hidden;
+  border:1px solid rgba(255,77,94,.22);border-radius:18px;background:rgba(8,4,7,.94);backdrop-filter:blur(18px);
+  box-shadow:0 26px 80px rgba(0,0,0,.72),0 0 0 1px rgba(255,255,255,.04);opacity:0;transform:translateY(14px) scale(.96);
+  transform-origin:bottom right;pointer-events:none;transition:opacity .24s,transform .24s}
+.faq-chat.open .chat-panel{opacity:1;transform:none;pointer-events:auto}
+.chat-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 16px 14px;border-bottom:1px solid rgba(255,80,100,.14);
+  background:linear-gradient(180deg,rgba(255,35,56,.12),rgba(255,35,56,.02))}
+.chat-title{display:flex;align-items:center;gap:11px;font-weight:800;font-family:'Sora',sans-serif}
+.chat-mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),var(--ember));box-shadow:0 10px 28px rgba(255,35,56,.35)}
+.chat-mark svg{width:20px;height:20px}
+.chat-title small{display:block;font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:12px;color:var(--muted);margin-top:1px}
+.chat-close{width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.chat-body{padding:16px;overflow:auto;max-height:calc(min(640px,100vh - 122px) - 67px)}
+.chat-intro{color:var(--muted);font-size:13px;margin-bottom:12px}
+.chat-options{display:grid;gap:9px;margin-bottom:14px}
+.chat-intro[hidden],.chat-options[hidden]{display:none!important}
+.chat-question{width:100%;border:1px solid rgba(255,77,94,.18);border-radius:12px;background:rgba(255,255,255,.035);color:var(--ink);
+  padding:11px 12px;text-align:left;font-weight:700;font-size:13.5px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.chat-question:hover{background:rgba(255,45,64,.1);border-color:rgba(255,77,94,.44);transform:translateX(3px)}
+.chat-thread{display:flex;flex-direction:column;gap:10px}
+.chat-bubble{max-width:92%;border-radius:16px;padding:12px 14px;font-size:14px;line-height:1.45;border:1px solid rgba(255,255,255,.06)}
+.chat-bubble.user{align-self:flex-end;background:linear-gradient(135deg,rgba(255,35,56,.3),rgba(110,10,26,.72));border-color:rgba(255,77,94,.42);box-shadow:0 12px 30px rgba(255,35,56,.18)}
+.chat-bubble.bot{align-self:flex-start;background:#100d13;color:#f7eef1;border-color:rgba(255,255,255,.07)}
+.chat-bubble.bot a{color:#fff;font-weight:800;text-decoration:underline;text-decoration-color:rgba(255,77,94,.7);text-underline-offset:3px}
+.chat-follow{display:flex;justify-content:flex-end;gap:9px;flex-wrap:wrap;margin-top:2px}
+.chat-more{border:1px solid rgba(255,77,94,.42);border-radius:14px;padding:11px 14px;background:linear-gradient(135deg,rgba(255,35,56,.34),rgba(110,10,26,.76));
+  color:#fff;font-weight:800;cursor:pointer;box-shadow:0 12px 30px rgba(255,35,56,.16)}
+.chat-no{border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:11px 14px;background:rgba(255,255,255,.045);
+  color:var(--ink);font-weight:800;cursor:pointer}
+@media(max-width:620px){.faq-chat{right:16px;bottom:16px}.chat-launch{width:58px;height:58px;border-radius:16px}.chat-panel{bottom:74px}}
+
+/* ===== PAGE TRANSITION ===== */
+#page-fade{position:fixed;inset:0;z-index:9998;pointer-events:none;display:grid;place-items:center;
+  background:radial-gradient(70% 70% at 50% 42%,#170609,#080304 82%);
+  opacity:0;visibility:hidden;transition:opacity .42s ease,visibility .42s}
+#page-fade.show{opacity:1;visibility:visible;pointer-events:all}
+#page-fade .pf-ring{position:absolute;width:118px;height:118px;border-radius:50%;
+  border:2px solid transparent;border-top-color:var(--red-bright);border-right-color:var(--ember);
+  filter:drop-shadow(0 0 10px rgba(255,45,64,.5));opacity:0}
+#page-fade.show .pf-ring{opacity:.9;animation:pfSpin .8s linear infinite}
+@keyframes pfSpin{to{transform:rotate(360deg)}}
+#page-fade .pf-mark{width:62px;height:62px;border-radius:15px;object-fit:cover;
+  box-shadow:0 0 0 1px var(--line),0 22px 60px rgba(255,35,56,.45);opacity:0}
+#page-fade.show .pf-mark{animation:pfMark .5s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes pfMark{0%{opacity:0;transform:scale(.8) translateY(8px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+#page-fade .pf-bar{position:absolute;left:0;bottom:0;height:3px;width:0;
+  background:linear-gradient(90deg,var(--crimson),var(--red),var(--ember));box-shadow:0 0 18px var(--red-bright)}
+#page-fade.show .pf-bar{animation:pfBar .5s ease forwards}
+@keyframes pfBar{to{width:100%}}
+/* entering-page reveal — pure CSS so content is never left hidden */
+body{animation:pageIn .6s ease both}
+@keyframes pageIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){body{animation:none}#page-fade{transition:none}#page-fade.show .pf-ring{animation:none}}
+</style>
+</head>
+<body>
+<div id="page-fade" aria-hidden="true">
+  <div class="pf-ring"></div>
+  <img class="pf-mark" src="assets/ceeslay-logo.png" alt="" />
+  <div class="pf-bar"></div>
+</div>
+<canvas id="star-canvas" aria-hidden="true"></canvas>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand" data-scroll-target="top"><img class="mark" src="assets/ceeslay-logo.png" alt="CeeSlay" /><span>Cee<em>Slay</em></span></a>
+    <div class="nav-links">
+      <a href="index.html" data-scroll-target="why">Why Us</a>
+      <a href="index.html" data-scroll-target="layers">Optimization</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="index.html" data-scroll-target="faq">FAQ</a>
+    </div>
+    <a href="index.html" class="btn btn-ghost" data-scroll-target="top">Home</a>
+  </div>
+</nav>
+
+<main class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <span class="eyebrow">Choose your edge</span>
+        <h1>Products<span>.</span></h1>
+        <p>One-time tweak packages plus hands-on services, all powered by RisxnTweaks. Free to test in the Discord before you buy.</p>
+        <div class="trust-strip">
+          <div><b>10,000+</b> customers</div>
+          <div><b>Windows</b> 10 &amp; 11</div>
+          <div><b>24/7</b> Discord support</div>
+        </div>
+      </div>
+      <a href="https://risxntweaks.com/discount/CEESLAY" class="btn btn-primary" target="_blank" rel="noopener">Purchase now</a>
+    </div>
+
+    <div class="products">
+      <div class="card">
+        <div class="card-media"><img src="assets/products/basic.png" alt="Basic Tweaks" /></div>
+        <h3>Basic Tweaks</h3>
+        <div class="price">$10<small> one-time</small></div>
+        <ul><li>Core FPS &amp; latency tweaks</li><li>One-time purchase</li><li>24/7 Discord support</li></ul>
+        <a href="https://risxntweaks.com/discount/CEESLAY" class="btn btn-ghost" target="_blank" rel="noopener">Get Basic</a>
+      </div>
+
+      <div class="card featured">
+        <span class="tag">1,300+ tweaks</span>
+        <div class="card-media"><img src="assets/products/extreme.png" alt="Extreme Tweaks" /></div>
+        <h3>Extreme Tweaks</h3>
+        <div class="price">$29.99<small> &nbsp;<s>$39.99</s></small></div>
+        <ul><li>Windows, registry, network, GPU &amp; DirectX</li><li>Debloats Windows, Chrome, Discord &amp; Epic</li><li>NVIDIA &amp; Radeon driver tuning</li></ul>
+        <a href="https://risxntweaks.com/discount/CEESLAY" class="btn btn-primary" target="_blank" rel="noopener">Get Extreme</a>
+      </div>
+
+      <div class="card">
+        <div class="card-media"><img src="assets/products/pro.png" alt="Pro Tweaks" /></div>
+        <h3>Pro Tweaks</h3>
+        <div class="price">$20<small> one-time</small></div>
+        <ul><li>A deeper full optimization pass</li><li>FPS, ping &amp; input-delay gains</li><li>One-time purchase</li></ul>
+        <a href="https://risxntweaks.com/discount/CEESLAY" class="btn btn-ghost" target="_blank" rel="noopener">Get Pro</a>
+      </div>
+
+      <div class="card">
+        <div class="card-media"><img src="assets/products/aim.png" alt="Aim Tweaks" /></div>
+        <h3>Aim Tweaks</h3>
+        <div class="price">$10<small> and up</small></div>
+        <ul><li>Precision &amp; hit-registration tuning</li><li>Steadier, more consistent input</li><li>Sharper, more reliable aim</li></ul>
+        <a href="https://risxntweaks.com/discount/CEESLAY" class="btn btn-ghost" target="_blank" rel="noopener">Get Aim Tweaks</a>
+      </div>
+
+      <div class="card">
+        <div class="card-media"><img src="assets/products/services.png" alt="Optimization Services" /></div>
+        <h3>Optimization Services</h3>
+        <div class="price">$14.99<small> and up</small></div>
+        <ul><li>Hands-on by the Risxn team</li><li>BIOS + CPU/GPU overclocking</li><li>Network tuning &amp; OC checkups</li></ul>
+        <a href="https://risxntweaks.com/discount/CEESLAY" class="btn btn-ghost" target="_blank" rel="noopener">View Services</a>
+      </div>
+
+      <div class="card">
+        <div class="card-media"><img src="assets/products/services.png" alt="Custom OS" /></div>
+        <h3>Custom OS</h3>
+        <div class="price">Custom<small> install</small></div>
+        <ul><li>Fully debloated Windows install</li><li>Performance-tuned out of the box</li><li>Lowest latency, highest FPS</li></ul>
+        <a href="https://risxntweaks.com/discount/CEESLAY" class="btn btn-ghost" target="_blank" rel="noopener">Get Custom OS</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="faq-chat" id="faqChat">
+  <div class="chat-panel" role="dialog" aria-label="Quick questions">
+    <div class="chat-head">
+      <div class="chat-title">
+        <span class="chat-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8M8 13h5"/></svg></span>
+        <span>Quick Help<small>Fixed answers, fast support</small></span>
+      </div>
+      <button class="chat-close" type="button" aria-label="Close quick help"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="chat-body">
+      <p class="chat-intro">Pick a common question:</p>
+      <div class="chat-options"></div>
+      <div class="chat-thread" aria-live="polite"></div>
+    </div>
+  </div>
+  <button class="chat-launch" type="button" aria-label="Open quick help">
+    <span class="chat-dot"></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8M8 13h5"/></svg>
+  </button>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <span>CeeSlay Tweaks - products powered by RisxnTweaks.</span>
+    <span><a href="index.html" data-scroll-target="top">Back to home</a> · <a href="tos.html">Terms</a></span>
+  </div>
+</footer>
+<script>
+(function(){
+  const nav=document.querySelector('nav');
+  if(!nav) return;
+  const sync=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+  sync();
+  window.addEventListener('scroll',sync,{passive:true});
+})();
+
+(function(){
+  const KEY='ceeslay-scroll-target';
+  const isIndexPath=path=>{
+    const file=path.split('/').pop();
+    return file==='' || file==='index.html';
+  };
+  const cleanCurrentUrl=()=>history.replaceState(null,'',location.pathname+location.search);
+  const scrollToTarget=(target,instant=false)=>{
+    if(target==='top'){ window.scrollTo({top:0,behavior:instant?'auto':'smooth'}); return; }
+    const el=document.getElementById(target);
+    if(el) el.scrollIntoView({behavior:instant?'auto':'smooth',block:'start'});
+  };
+
+  let initialTarget='';
+  if(location.hash){
+    initialTarget=decodeURIComponent(location.hash.slice(1));
+    cleanCurrentUrl();
+  }
+  if(isIndexPath(location.pathname) && !initialTarget){
+    initialTarget=sessionStorage.getItem(KEY) || '';
+    sessionStorage.removeItem(KEY);
+  }
+  if(initialTarget) setTimeout(()=>scrollToTarget(initialTarget,true),80);
+
+  document.addEventListener('click',event=>{
+    const link=event.target.closest('a[data-scroll-target]');
+    if(!link) return;
+    const target=link.dataset.scrollTarget;
+    const url=new URL(link.href,location.href);
+    url.hash='';
+    event.preventDefault();
+
+    if(isIndexPath(location.pathname) && isIndexPath(url.pathname)){
+      cleanCurrentUrl();
+      scrollToTarget(target);
+    }else{
+      sessionStorage.setItem(KEY,target);
+      if(window.__pageGo){ window.__pageGo(url.href); } else { window.location.href=url.href; }
+    }
+  });
+})();
+
+/* ===== PAGE TRANSITION ===== */
+(function(){
+  const fade=document.getElementById('page-fade');
+  const go=href=>{
+    if(!fade){ location.href=href; return; }
+    fade.classList.add('show');
+    setTimeout(()=>{ location.href=href; },430);
+  };
+  window.__pageGo=go;
+  // clear overlay if the page is restored from bfcache (back/forward)
+  window.addEventListener('pageshow',()=>{ if(fade) fade.classList.remove('show'); });
+
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('a[href]');
+    if(!a || a.hasAttribute('data-scroll-target')) return;
+    if(a.hasAttribute('download')) return;
+    if(a.target && a.target!=='_self') return;
+    if(e.defaultPrevented || e.button!==0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    let url; try{ url=new URL(a.href,location.href); }catch(_){ return; }
+    if(url.origin!==location.origin) return;
+    if(url.pathname===location.pathname) return;   // same page / in-page anchor
+    if(!/\.html?$/i.test(url.pathname)) return;      // only full page navigations
+    e.preventDefault();
+    go(url.href);
+  });
+})();
+
+(function(){
+  const chat=document.getElementById('faqChat'); if(!chat) return;
+  const launch=chat.querySelector('.chat-launch'), close=chat.querySelector('.chat-close'),
+        options=chat.querySelector('.chat-options'), intro=chat.querySelector('.chat-intro'),
+        thread=chat.querySelector('.chat-thread'), body=chat.querySelector('.chat-body');
+  const questions=[
+    {q:'Will I get banned?', a:"No worries. Our tweaks modify Windows, console, driver and network settings, not game files or anti-cheat. They are made for legit competitive play."},
+    {q:'Can it harm my PC?', a:"No. The tweaks are reversible and focused on reducing background load, latency and wasted services. We keep everything centered on safer performance tuning."},
+    {q:'Will it work on my PC?', a:"Most likely, yes. CeeSlay Tweaks are built for Windows 10 and Windows 11, and older or bloated PCs usually see the biggest improvement."},
+    {q:'What do the tweaks change?', a:"They carefully tune Windows, registry, power plans, network settings, GPU settings, drivers, DirectX, sound latency and bloat so games get more of your system."},
+    {q:'Can I try before I buy?', a:"Yes. You are welcome to join the Discord first, ask questions, check reviews and test what is available before buying."},
+    {q:'Which package should I get?', a:"Basic is great for a quick boost, Pro is a deeper optimization pass, and Extreme is the full 1,300+ tweak package for the biggest FPS and latency gains."}
+  ];
+  function scrollDown(){ body.scrollTop=body.scrollHeight; }
+  function bubble(text,type){
+    const el=document.createElement('div');
+    el.className='chat-bubble '+type;
+    el.innerHTML=text;
+    thread.appendChild(el);
+    scrollDown();
+  }
+  function showDiscord(){
+    bubble('Yes, ask another','user');
+    setTimeout(()=>bubble('Absolutely. For more questions, please join our Discord server for friendly live support: <a href="https://discord.gg/risxn" target="_blank" rel="noopener">discord.gg/risxn</a>','bot'),140);
+  }
+  function sayGoodbye(){
+    bubble('No','user');
+    setTimeout(()=>bubble("No problem at all. Thanks for checking us out. We hope your games feel smoother, faster and better every time you play.",'bot'),140);
+  }
+  function ask(item){
+    options.hidden=true; intro.hidden=true; thread.innerHTML='';
+    bubble(item.q,'user');
+    setTimeout(()=>{ bubble(item.a,'bot'); bubble('Anything else I can help with?','bot');
+      const wrap=document.createElement('div'); wrap.className='chat-follow';
+      wrap.innerHTML='<button class="chat-more" type="button">Yes, ask another</button><button class="chat-no" type="button">No</button>';
+      thread.appendChild(wrap);
+      wrap.querySelector('.chat-more').addEventListener('click',()=>{ wrap.remove(); showDiscord(); },{once:true});
+      wrap.querySelector('.chat-no').addEventListener('click',()=>{ wrap.remove(); sayGoodbye(); },{once:true});
+      scrollDown();
+    },120);
+  }
+  options.innerHTML=questions.map((item,i)=>`<button class="chat-question" type="button" data-i="${i}">${item.q}</button>`).join('');
+  options.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>ask(questions[+btn.dataset.i])));
+  launch.addEventListener('click',()=>chat.classList.toggle('open'));
+  close.addEventListener('click',()=>chat.classList.remove('open'));
+})();
+
+(function(){
+  const canvas=document.getElementById('star-canvas');
+  if(!canvas) return;
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ctx=canvas.getContext('2d');
+  let w=0,h=0,dpr=Math.min(window.devicePixelRatio||1,2),stars=[];
+
+  function size(){
+    w=canvas.width=Math.floor(window.innerWidth*dpr);
+    h=canvas.height=Math.floor(window.innerHeight*dpr);
+    canvas.style.width=window.innerWidth+'px';
+    canvas.style.height=window.innerHeight+'px';
+    makeStars();
+  }
+
+  function makeStar(){
+    const depth=Math.random();
+    return {
+      x:Math.random()*w,
+      y:Math.random()*h,
+      depth,
+      r:(0.45+depth*1.45)*dpr,
+      vx:(Math.random()-.5)*(0.18+depth*.18)*dpr,
+      vy:(Math.random()-.5)*(0.15+depth*.16)*dpr,
+      wave:Math.random()*6.28,
+      pulse:.45+Math.random()*1.1,
+      hue:Math.random()<.72?354:22
+    };
+  }
+
+  function makeStars(){
+    const count=window.innerWidth<720?72:148;
+    stars=Array.from({length:count},makeStar);
+  }
+
+  function wrap(star){
+    const pad=18*dpr;
+    if(star.x<-pad) star.x=w+pad;
+    if(star.x>w+pad) star.x=-pad;
+    if(star.y<-pad) star.y=h+pad;
+    if(star.y>h+pad) star.y=-pad;
+  }
+
+  let tick=0;
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    tick+=reduce?0:.022;
+    for(const star of stars){
+      if(!reduce){
+        star.x+=star.vx+Math.sin(tick*.7+star.wave)*0.035*dpr;
+        star.y+=star.vy+Math.cos(tick*.55+star.wave)*0.03*dpr;
+        wrap(star);
+      }
+      const alpha=(0.16+star.depth*.30)*(0.62+0.38*Math.sin(tick*star.pulse+star.wave));
+      ctx.beginPath();
+      ctx.fillStyle=`hsla(${star.hue}, 95%, ${62+star.depth*12}%, ${alpha})`;
+      ctx.shadowBlur=(5+star.depth*9)*dpr;
+      ctx.shadowColor=`hsla(${star.hue}, 95%, 62%, ${alpha})`;
+      ctx.arc(star.x,star.y,star.r,0,Math.PI*2);
+      ctx.fill();
+    }
+    ctx.shadowBlur=0;
+    requestAnimationFrame(draw);
+  }
+
+  size();
+  window.addEventListener('resize',size);
+  draw();
+})();
+</script>
+</body>
+</html>
