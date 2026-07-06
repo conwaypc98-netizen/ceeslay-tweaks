@@ -1116,18 +1116,29 @@ document.querySelectorAll('.q button').forEach(b=>{
 
 /* ===== REVIEWS ===== */
 const reviews=[
-  {u:'AsianJeff', s:'Fortnite Pro', img:'assets/pros/asianjeff.png', pro:true},
+  // Featured pros / creators — shown first, most prominent
   {u:'Peterbot', s:'Fortnite Pro', img:'assets/pros/peterbot.jpg', pro:true},
+  {u:'AsianJeff', s:'Fortnite Pro', img:'assets/pros/asianjeff.png', pro:true},
+  {u:'Bandzrt', s:'Content Creator', img:'assets/pros/bandzrt.jpg', pro:true},
   {u:'Kirillian', s:'Fortnite Pro', img:'assets/pros/kirillian.jpg', pro:true},
+  {u:'SkayerGG', s:'Fortnite Pro', img:'assets/pros/skayter.jpg', pro:true},
   {u:'NinjSZN', s:'Content Creator', img:'assets/pros/ninjszn.jpg', pro:true},
   {u:'Chica', s:'Twitch Streamer', img:'assets/pros/chica.jpg', pro:true},
-  {u:'SkayerGG', s:'Fortnite Pro', img:'assets/pros/skayter.jpg', pro:true}
+  // Verified customer reviews
+  {u:'crypticwtw', s:'Verified buyer', t:"Everytime I use the utility I get 0 delay + a 200fps boost on laptop."},
+  {u:'ice217850', s:'Verified buyer', t:"Amazing service. I never knew a tweak could make such a difference — it's like I'm a totally different person playing."},
+  {u:'yukii11', s:'Verified buyer', t:"0 delay, everything feels nice and smooth. Get it if your PC is starting to feel slow."},
+  {u:'sickuta', s:'Verified buyer', t:"The best tweak you can get right now — my game feels way better than before."},
+  {u:'chasemefn', s:'Verified buyer', t:"Great service, they helped me for hours to make sure I was good. Definitely recommend."}
 ];
 const star='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7-6.2-3.4L5.8 21l1.2-7-5-4.9 7-.9L12 2z"/></svg>';
-function tstCard(r){return `<div class="tst${r.pro?' pro-tst':''}" data-cursor>
-  <span class="pro-badge">Featured pro</span>
+function tstCard(r){
+  const av=r.img?`<img src="${r.img}" alt="${r.u}" />`:(r.initials||r.u[0].toUpperCase());
+  return `<div class="tst${r.pro?' pro-tst':''}" data-cursor>
+  ${r.pro?'<span class="pro-badge">Featured pro</span>':''}
   <div class="stars">${star.repeat(5)}</div>
-  <div class="who"><div class="av${r.img?'':' initials'}">${r.img?`<img src="${r.img}" alt="${r.u}" />`:(r.initials||r.u[0].toUpperCase())}</div><div><b>${r.u}</b><span class="vsub">${r.s}</span></div></div></div>`;}
+  ${r.t?`<p>${r.t}</p>`:''}
+  <div class="who"><div class="av${r.img?'':' initials'}">${av}</div><div><b>${r.u}</b><span class="vsub">${r.s}</span></div></div></div>`;}
 const tstTrack=document.getElementById('tstTrack');
 if(tstTrack){ let h=''; for(let k=0;k<2;k++) reviews.forEach(r=>h+=tstCard(r)); tstTrack.innerHTML=h; }
 
