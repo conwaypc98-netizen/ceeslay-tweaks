@@ -85,8 +85,9 @@ nav.scrolled{background:rgba(8,3,4,.72);backdrop-filter:blur(18px);border-color:
 .card.featured{border-color:rgba(255,77,94,.5);background:linear-gradient(180deg,rgba(255,35,56,.1),rgba(20,6,9,.5))}
 .card .tag{position:absolute;top:18px;right:18px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:20px;background:var(--red);color:#fff;box-shadow:0 6px 18px rgba(255,35,56,.5);z-index:2}
 .card h3{font-size:21px;font-weight:800;margin-bottom:6px}
-.card .price{font-family:'Sora';font-weight:800;font-size:34px;margin:12px 0 4px}
+.card .price{font-family:'Sora';font-weight:800;font-size:34px;margin:12px 0 4px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .card .price small{font-size:14px;color:var(--muted);font-weight:600}
+.card .price s{color:var(--muted-2);text-decoration-color:var(--red-bright);text-decoration-thickness:2px}
 .card-media{height:280px;margin:-6px -6px 16px;border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 34%,rgba(255,45,64,.18),transparent 68%),#0c0506;border:1px solid var(--line)}
 .card-media img{max-width:64%;max-height:92%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 14px 26px rgba(0,0,0,.55));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .card:hover .card-media img{transform:translateY(-4px) scale(1.02)}
@@ -193,7 +194,7 @@ body{animation:pageIn .6s ease both}
       <div>
         <span class="eyebrow">Choose your edge</span>
         <h1>Products<span>.</span></h1>
-        <p>One-time tweak packages plus hands-on services, all powered by RisxnTweaks. Free to test in the Discord before you buy.</p>
+        <p>One-time tweak packages plus hands-on services, all powered by RisxnTweaks. Prices below show the 15% off code already applied.</p>
         <div class="trust-strip">
           <div><b>10,000+</b> customers</div>
           <div><b>Windows</b> 10 &amp; 11</div>
@@ -207,7 +208,7 @@ body{animation:pageIn .6s ease both}
       <div class="card">
         <div class="card-media"><img src="assets/products/basic.png" alt="Basic Tweaks" /></div>
         <h3>Basic Tweaks</h3>
-        <div class="price">$10<small> one-time</small></div>
+        <div class="price">$9.35<small><s>$11</s> one-time</small></div>
         <ul><li>Core FPS &amp; latency tweaks</li><li>One-time purchase</li><li>24/7 Discord support</li></ul>
         <a href="https://risxntweaks.com/r?id=eb1f98" class="btn btn-ghost" target="_blank" rel="noopener">Get Basic</a>
       </div>
@@ -216,7 +217,7 @@ body{animation:pageIn .6s ease both}
         <span class="tag">1,300+ tweaks</span>
         <div class="card-media"><img src="assets/products/extreme.png" alt="Extreme Tweaks" /></div>
         <h3>Extreme Tweaks</h3>
-        <div class="price">$29.99<small> &nbsp;<s>$39.99</s></small></div>
+        <div class="price">$25.49<small><s>$29.99</s> one-time</small></div>
         <ul><li>Windows, registry, network, GPU &amp; DirectX</li><li>Debloats Windows, Chrome, Discord &amp; Epic</li><li>NVIDIA &amp; Radeon driver tuning</li></ul>
         <a href="https://risxntweaks.com/r?id=e7vm3b" class="btn btn-primary" target="_blank" rel="noopener">Get Extreme</a>
       </div>
@@ -224,7 +225,7 @@ body{animation:pageIn .6s ease both}
       <div class="card">
         <div class="card-media"><img src="assets/products/pro.png" alt="Pro Tweaks" /></div>
         <h3>Pro Tweaks</h3>
-        <div class="price">$20<small> one-time</small></div>
+        <div class="price">$16.99<small><s>$19.99</s> one-time</small></div>
         <ul><li>A deeper full optimization pass</li><li>FPS, ping &amp; input-delay gains</li><li>One-time purchase</li></ul>
         <a href="https://risxntweaks.com/r?id=moph1s" class="btn btn-ghost" target="_blank" rel="noopener">Get Pro</a>
       </div>
@@ -232,7 +233,7 @@ body{animation:pageIn .6s ease both}
       <div class="card">
         <div class="card-media"><img src="assets/products/aim.png" alt="Precision Tweaks" /></div>
         <h3>Precision Tweaks</h3>
-        <div class="price">$10<small> and up</small></div>
+        <div class="price">$6.38<small> and up <s>$7.50</s></small></div>
         <ul><li>Precision &amp; hit-registration tuning</li><li>Steadier, more consistent input</li><li>Sharper, more reliable aim</li></ul>
         <a href="https://risxntweaks.com/r?id=nurm2s" class="btn btn-ghost" target="_blank" rel="noopener">Get Precision</a>
       </div>
@@ -240,7 +241,7 @@ body{animation:pageIn .6s ease both}
       <div class="card">
         <div class="card-media"><img src="assets/products/services.png" alt="Optimization Services" /></div>
         <h3>Optimization Services</h3>
-        <div class="price">$14.99<small> and up</small></div>
+        <div class="price">$12.74<small> and up <s>$14.99</s></small></div>
         <ul><li>Hands-on by the Risxn team</li><li>BIOS + CPU/GPU overclocking</li><li>Network tuning &amp; OC checkups</li></ul>
         <a href="https://risxntweaks.com/r?id=jgu5ql" class="btn btn-ghost" target="_blank" rel="noopener">View Services</a>
       </div>
@@ -248,7 +249,7 @@ body{animation:pageIn .6s ease both}
       <div class="card">
         <div class="card-media"><img src="assets/products/services.png" alt="Xbox Optimization" /></div>
         <h3>Xbox Optimization</h3>
-        <div class="price">Console<small> tuning</small></div>
+        <div class="price">$12.74<small><s>$14.99</s> guide</small></div>
         <ul><li>Console network and display guidance</li><li>Cleaner settings for competitive play</li><li>Step-by-step support</li></ul>
         <a href="https://risxntweaks.com/r?id=1adv53" class="btn btn-ghost" target="_blank" rel="noopener">Get Xbox</a>
       </div>
@@ -256,7 +257,7 @@ body{animation:pageIn .6s ease both}
       <div class="card">
         <div class="card-media"><img src="assets/products/services.png" alt="PlayStation Optimization" /></div>
         <h3>PlayStation Optimization</h3>
-        <div class="price">Console<small> tuning</small></div>
+        <div class="price">$12.74<small><s>$14.99</s> guide</small></div>
         <ul><li>PS5 and PS4 settings guidance</li><li>Lower-latency setup recommendations</li><li>Competitive-ready console config</li></ul>
         <a href="https://risxntweaks.com/r?id=08j89g" class="btn btn-ghost" target="_blank" rel="noopener">Get PlayStation</a>
       </div>
@@ -264,7 +265,7 @@ body{animation:pageIn .6s ease both}
       <div class="card">
         <div class="card-media"><img src="assets/products/services.png" alt="Full Optimization" /></div>
         <h3>Full Optimization</h3>
-        <div class="price">Full<small> service</small></div>
+        <div class="price">$67.99<small><s>$79.99</s> full service</small></div>
         <ul><li>One-on-one complete optimization</li><li>PC, network and game settings tuned</li><li>Lowest latency, highest FPS focus</li></ul>
         <a href="https://risxntweaks.com/r?id=h1ai28" class="btn btn-ghost" target="_blank" rel="noopener">Get Full Opti</a>
       </div>
