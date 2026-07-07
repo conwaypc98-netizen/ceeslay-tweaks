@@ -166,6 +166,40 @@ footer .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
 body{animation:pageIn .6s ease both}
 @keyframes pageIn{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){body{animation:none}#page-fade{transition:none}#page-fade.show .pf-ring{animation:none}}
+
+/* ===== PRECISION TWEAKS MODAL ===== */
+[data-open-precision]{cursor:pointer}
+.pt-modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:20px;visibility:hidden;opacity:0;transition:opacity .3s,visibility .3s}
+.pt-modal.open{visibility:visible;opacity:1}
+.pt-overlay{position:absolute;inset:0;background:rgba(4,1,2,.74);backdrop-filter:blur(9px)}
+.pt-panel{position:relative;z-index:1;width:min(940px,100%);max-height:88vh;overflow:auto;border-radius:22px;
+  border:1px solid rgba(255,90,110,.28);background:linear-gradient(180deg,rgba(24,9,12,.99),rgba(10,4,6,.99));
+  box-shadow:0 44px 120px -30px rgba(255,35,56,.45);padding:28px;transform:translateY(18px) scale(.97);transition:transform .34s cubic-bezier(.2,.8,.2,1)}
+.pt-modal.open .pt-panel{transform:none}
+.pt-close{position:absolute;top:15px;right:15px;width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.pt-close:hover{background:rgba(255,45,64,.1);border-color:var(--red-bright)}
+.pt-head{display:flex;align-items:center;gap:20px;margin-bottom:22px;flex-wrap:wrap;padding-right:44px}
+.pt-box{width:82px;height:82px;object-fit:contain;filter:drop-shadow(0 10px 20px rgba(0,0,0,.6));flex:none}
+.pt-head h2{font-size:clamp(22px,3vw,28px);font-weight:800;margin:7px 0 4px}
+.pt-head p{color:var(--muted);font-size:14px;max-width:440px}
+.pt-off{margin-left:auto;align-self:flex-start;font-weight:800;font-size:12px;letter-spacing:.05em;padding:7px 13px;border-radius:20px;
+  background:linear-gradient(135deg,var(--red),var(--crimson));color:#fff;box-shadow:0 8px 22px rgba(255,35,56,.5)}
+.pt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.pt-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pt-grid{grid-template-columns:1fr}.pt-panel{padding:20px}}
+.pt-type{border:1px solid var(--line);border-radius:16px;padding:15px 15px 13px;background:rgba(255,255,255,.02)}
+.pt-type-name{font-family:'Sora';font-weight:700;font-size:15.5px;margin-bottom:11px;display:flex;align-items:center;gap:8px}
+.pt-type-name::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red-bright);box-shadow:0 0 8px var(--red-bright)}
+.pt-opts{display:flex;flex-direction:column;gap:8px}
+.pt-opt{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:11px;border:1px solid var(--line);
+  background:rgba(255,255,255,.02);transition:transform .2s,border-color .2s,background .2s}
+.pt-opt:hover{transform:translateX(3px);border-color:var(--red-bright);background:rgba(255,45,64,.09)}
+.pt-opt-d{font-size:12.5px;font-weight:600;color:var(--muted)}
+.pt-opt-price{display:flex;align-items:baseline;gap:6px;margin-left:auto}
+.pt-opt-price b{font-family:'Sora';font-weight:800;font-size:16px;color:#fff}
+.pt-opt-price s{font-size:11.5px;color:var(--muted-2);text-decoration-color:var(--red-bright);text-decoration-thickness:1.5px}
+.pt-get{font-size:12px;font-weight:800;color:var(--red-bright);white-space:nowrap}
+.pt-note{color:var(--muted-2);font-size:12px;margin-top:16px;text-align:center}
 </style>
 </head>
 <body>
@@ -235,7 +269,7 @@ body{animation:pageIn .6s ease both}
         <h3>Precision Tweaks</h3>
         <div class="price">$6.38<small> and up <s>$7.50</s></small></div>
         <ul><li>Precision &amp; hit-registration tuning</li><li>Steadier, more consistent input</li><li>Sharper, more reliable aim</li></ul>
-        <a href="https://risxntweaks.com/r?id=nurm2s" class="btn btn-ghost" target="_blank" rel="noopener">Get Precision</a>
+        <a href="precision-tweaks.html" class="btn btn-ghost">Choose your tweak</a>
       </div>
 
       <div class="card">
@@ -243,7 +277,7 @@ body{animation:pageIn .6s ease both}
         <h3>Optimization Services</h3>
         <div class="price">$12.74<small> and up <s>$14.99</s></small></div>
         <ul><li>Hands-on by the Risxn team</li><li>BIOS + CPU/GPU overclocking</li><li>Network tuning &amp; OC checkups</li></ul>
-        <a href="https://risxntweaks.com/r?id=jgu5ql" class="btn btn-ghost" target="_blank" rel="noopener">View Services</a>
+        <a href="optimization-services.html" class="btn btn-ghost">View Services</a>
       </div>
 
       <div class="card">
