@@ -211,14 +211,14 @@ body{animation:pageIn .6s ease both}
 <canvas id="star-canvas" aria-hidden="true"></canvas>
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="brand" data-scroll-target="top"><img class="mark" src="assets/ceeslay-logo.png" alt="CeeSlay" /><span>Cee<em>Slay</em></span></a>
+    <a href="/" class="brand" data-scroll-target="top"><img class="mark" src="assets/ceeslay-logo.png" alt="CeeSlay" /><span>Cee<em>Slay</em></span></a>
     <div class="nav-links">
-      <a href="index.html" data-scroll-target="why">Why Us</a>
-      <a href="index.html" data-scroll-target="layers">Optimization</a>
-      <a href="products.html" class="active">Products</a>
-      <a href="index.html" data-scroll-target="faq">FAQ</a>
+      <a href="/" data-scroll-target="why">Why Us</a>
+      <a href="/" data-scroll-target="layers">Optimization</a>
+      <a href="/products" class="active">Products</a>
+      <a href="/" data-scroll-target="faq">FAQ</a>
     </div>
-    <a href="index.html" class="btn btn-ghost" data-scroll-target="top">Home</a>
+    <a href="/" class="btn btn-ghost" data-scroll-target="top">Home</a>
   </div>
 </nav>
 
@@ -269,7 +269,7 @@ body{animation:pageIn .6s ease both}
         <h3>Precision Tweaks</h3>
         <div class="price">$6.38<small> and up <s>$7.50</s></small></div>
         <ul><li>Precision &amp; hit-registration tuning</li><li>Steadier, more consistent input</li><li>Sharper, more reliable aim</li></ul>
-        <a href="precision-tweaks.html" class="btn btn-ghost">Choose your tweak</a>
+        <a href="/precision-tweaks" class="btn btn-ghost">Choose your tweak</a>
       </div>
 
       <div class="card">
@@ -277,7 +277,7 @@ body{animation:pageIn .6s ease both}
         <h3>Optimization Services</h3>
         <div class="price">$12.74<small> and up <s>$14.99</s></small></div>
         <ul><li>Hands-on by the Risxn team</li><li>BIOS + CPU/GPU overclocking</li><li>Network tuning &amp; OC checkups</li></ul>
-        <a href="optimization-services.html" class="btn btn-ghost">View Services</a>
+        <a href="/optimization-services" class="btn btn-ghost">View Services</a>
       </div>
 
       <div class="card">
@@ -331,7 +331,7 @@ body{animation:pageIn .6s ease both}
 <footer>
   <div class="wrap foot">
     <span>CeeSlay Tweaks - products powered by RisxnTweaks.</span>
-    <span><a href="index.html" data-scroll-target="top">Back to home</a> · <a href="tos.html">Terms</a></span>
+    <span><a href="/" data-scroll-target="top">Back to home</a> · <a href="/tos">Terms</a></span>
   </div>
 </footer>
 <script>
@@ -406,7 +406,6 @@ body{animation:pageIn .6s ease both}
     let url; try{ url=new URL(a.href,location.href); }catch(_){ return; }
     if(url.origin!==location.origin) return;
     if(url.pathname===location.pathname) return;   // same page / in-page anchor
-    if(!/\.html?$/i.test(url.pathname)) return;      // only full page navigations
     e.preventDefault();
     go(url.href);
   });

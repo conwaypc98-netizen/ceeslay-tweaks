@@ -130,20 +130,20 @@ body{animation:pageIn .6s ease both}
 <canvas id="star-canvas" aria-hidden="true"></canvas>
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="brand" data-scroll-target="top"><img class="mark" src="assets/ceeslay-logo.png" alt="CeeSlay" /><span>Cee<em>Slay</em></span></a>
+    <a href="/" class="brand" data-scroll-target="top"><img class="mark" src="assets/ceeslay-logo.png" alt="CeeSlay" /><span>Cee<em>Slay</em></span></a>
     <div class="nav-links">
-      <a href="index.html" data-scroll-target="why">Why Us</a>
-      <a href="index.html" data-scroll-target="layers">Optimization</a>
-      <a href="products.html" class="active">Products</a>
-      <a href="index.html" data-scroll-target="faq">FAQ</a>
+      <a href="/" data-scroll-target="why">Why Us</a>
+      <a href="/" data-scroll-target="layers">Optimization</a>
+      <a href="/products" class="active">Products</a>
+      <a href="/" data-scroll-target="faq">FAQ</a>
     </div>
-    <a href="products.html" class="btn btn-ghost">All products</a>
+    <a href="/products" class="btn btn-ghost">All products</a>
   </div>
 </nav>
 
 <main>
   <div class="wrap pd-wrap">
-    <div class="pd-crumb"><a href="index.html" data-scroll-target="top">Home</a> / <a href="products.html">Products</a> / <span>Precision Tweaks</span></div>
+    <div class="pd-crumb"><a href="/" data-scroll-target="top">Home</a> / <a href="/products">Products</a> / <span>Precision Tweaks</span></div>
     <div class="pd-hero">
       <div class="pd-gallery">
         <span class="pd-off">15% OFF</span>
@@ -183,7 +183,7 @@ body{animation:pageIn .6s ease both}
 <footer>
   <div class="wrap foot">
     <span>CeeSlay Tweaks - products powered by RisxnTweaks.</span>
-    <span><a href="products.html">All products</a> · <a href="index.html" data-scroll-target="top">Home</a> · <a href="tos.html">Terms</a></span>
+    <span><a href="/products">All products</a> · <a href="/" data-scroll-target="top">Home</a> · <a href="/tos">Terms</a></span>
   </div>
 </footer>
 
@@ -260,7 +260,6 @@ const PRECISION=[
     if(e.defaultPrevented || e.button!==0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     let url; try{ url=new URL(a.href,location.href); }catch(_){ return; }
     if(url.origin!==location.origin || url.pathname===location.pathname) return;
-    if(!/\.html?$/i.test(url.pathname)) return;
     e.preventDefault(); go(url.href);
   });
 })();

@@ -602,14 +602,14 @@ body{animation:pageIn .6s ease both}
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand" data-scroll-target="top" data-cursor><img class="mark" src="assets/ceeslay-logo.png" alt="CeeSlay" /><span class="wm">Cee<em>Slay</em></span></a>
+    <a href="/" class="brand" data-scroll-target="top" data-cursor><img class="mark" src="assets/ceeslay-logo.png" alt="CeeSlay" /><span class="wm">Cee<em>Slay</em></span></a>
     <div class="nav-links">
-      <a href="index.html" data-scroll-target="why" data-cursor>Why Us</a>
-      <a href="index.html" data-scroll-target="layers" data-cursor>Optimization</a>
-      <a href="products.html" data-cursor>Products</a>
-      <a href="index.html" data-scroll-target="faq" data-cursor>FAQ</a>
+      <a href="/" data-scroll-target="why" data-cursor>Why Us</a>
+      <a href="/" data-scroll-target="layers" data-cursor>Optimization</a>
+      <a href="/products" data-cursor>Products</a>
+      <a href="/" data-scroll-target="faq" data-cursor>FAQ</a>
     </div>
-    <a href="products.html" class="btn btn-primary" data-cursor data-magnetic>Get Optimized
+    <a href="/products" class="btn btn-primary" data-cursor data-magnetic>Get Optimized
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
   </div>
@@ -626,7 +626,7 @@ body{animation:pageIn .6s ease both}
       <h1 class="reveal d1"><span class="soft">Optimize</span> <span class="grad">your PC</span><br><span class="soft">for Gaming</span></h1>
       <p class="lead reveal d2">CeeSlay Tweaks removes bloatware and optimizes your PC for higher FPS, lower input delay, and reduced ping. Get smoother gameplay and precision hit registration tweaks for competitive shooters — fully reversible and anti-cheat safe.</p>
       <div class="hero-cta reveal d3">
-        <a href="products.html" class="btn btn-primary btn-lg" data-cursor data-magnetic>
+        <a href="/products" class="btn btn-primary btn-lg" data-cursor data-magnetic>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
           Explore Services
         </a>
@@ -855,13 +855,13 @@ body{animation:pageIn .6s ease both}
 <footer>
   <div class="wrap">
     <div class="foot">
-      <a href="index.html" class="brand" data-scroll-target="top" data-cursor><img class="mark" src="assets/ceeslay-logo.png" alt="CeeSlay" /><span class="wm">Cee<em>Slay</em></span></a>
+      <a href="/" class="brand" data-scroll-target="top" data-cursor><img class="mark" src="assets/ceeslay-logo.png" alt="CeeSlay" /><span class="wm">Cee<em>Slay</em></span></a>
       <div class="foot-links">
-        <a href="index.html" data-scroll-target="why" data-cursor>Why Us</a>
-        <a href="products.html" data-cursor>Products</a>
-        <a href="index.html" data-scroll-target="faq" data-cursor>FAQ</a>
+        <a href="/" data-scroll-target="why" data-cursor>Why Us</a>
+        <a href="/products" data-cursor>Products</a>
+        <a href="/" data-scroll-target="faq" data-cursor>FAQ</a>
         <a href="https://risxntweaks.com/pages/purchase" data-cursor>Store</a>
-        <a href="tos.html" data-cursor>Terms</a>
+        <a href="/tos" data-cursor>Terms</a>
       </div>
     </div>
     <p class="foot-note">CeeSlay Tweaks · Windows 10 &amp; 11 · 10,000+ customers · 24/7 Discord support · Free to test. Optimizing your own PC does not modify game files or trip anti-cheat.</p>
@@ -953,7 +953,6 @@ body{animation:pageIn .6s ease both}
     let url; try{ url=new URL(a.href,location.href); }catch(_){ return; }
     if(url.origin!==location.origin) return;
     if(url.pathname===location.pathname) return;   // same page / in-page anchor
-    if(!/\.html?$/i.test(url.pathname)) return;      // only full page navigations
     e.preventDefault();
     go(url.href);
   });
